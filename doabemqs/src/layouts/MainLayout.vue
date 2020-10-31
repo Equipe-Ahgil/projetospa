@@ -37,6 +37,11 @@
               <q-item-label>Pessoa Juridica</q-item-label>
             </q-item-section>
           </q-item>
+          <q-item clickable v-close-popup>
+            <q-item-section>
+              <q-item-label>Beneficiários</q-item-label>
+            </q-item-section>
+          </q-item>
         </q-list>
       </q-btn-dropdown>
       <q-btn stretch flat label="Pesquisar Casos" icon="search">
