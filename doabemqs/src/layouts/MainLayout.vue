@@ -1,5 +1,5 @@
 <template>
-  <q-layout view="hHh lpR fFf">
+  <q-layout view="hHh lpR fff">
 
     <q-header elevated class="bg-primary text-white">
       <q-toolbar>
@@ -14,7 +14,7 @@
       <q-btn stretch flat label="Login" />
       <q-btn-dropdown stretch flat label="Cadastro">
         <q-list>
-          <!-- <q-item-label header>Folders</q-item-label> -->
+          <!-- <q-item-label header>Folders</q-item-label>
           <q-item v-for="n in 3" :key="`x.${n}`" clickable v-close-popup tabindex="0">
             <q-item-section avatar>
               <q-avatar icon="folder" color="secondary" text-color="white" />
@@ -26,10 +26,26 @@
             <q-item-section side>
               <q-icon name="info" />
             </q-item-section>
+          </q-item> -->
+          <q-item clickable v-close-popup>
+            <q-item-section>
+              <q-item-label>Pessoa Fisica</q-item-label>
+            </q-item-section>
+          </q-item>
+          <q-item clickable v-close-popup>
+            <q-item-section>
+              <q-item-label>Pessoa Juridica</q-item-label>
+            </q-item-section>
+          </q-item>
+          <q-item clickable v-close-popup>
+            <q-item-section>
+              <q-item-label>Beneficiários</q-item-label>
+            </q-item-section>
           </q-item>
         </q-list>
       </q-btn-dropdown>
-      <q-btn stretch flat label="Pesquisar Casos" />
+      <q-btn stretch flat label="Pesquisar Casos" icon="search">
+      </q-btn>
         <q-list>
         <EssentialLink
           v-for="link in essentialLinks"
@@ -44,15 +60,42 @@
       <router-view />
     </q-page-container>
 
-    <q-footer elevated class="bg-footer text-white">
-      <q-toolbar>
-        <q-toolbar-title>
-          <q-avatar>
-            <img src="https://cdn.quasar.dev/logo/svg/quasar-logo.svg">
-          </q-avatar>
-          Title
-        </q-toolbar-title>
-      </q-toolbar>
+    <q-footer class="bg-footer text-white">
+      <div class="container_footer">
+        <div class="row_footer">
+          <div>
+            <ul>
+              <li><p>Transparência</p></li>
+              <li>Empresa parceira</li>
+              <li>Ajuda</li>
+              <li>Voluntários</li>
+            </ul>
+          </div>
+          <div>
+            <ul>
+              <li><p>Links uteis</p></li>
+              <li>Sua conta</li>
+              <li>Relatórios</li>
+              <li>Fale Conosco</li>
+            </ul>
+          </div>
+          <div>
+            <ul>
+              <li><p>Contato</p></li>
+              <li>Sua conta</li>
+              <li>Relatórios</li>
+              <li>Fale Conosco</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer-links">
+        <div class="footer-icons">
+          <a href="#"><img src="../assets/instagram.svg" alt="Instagram"></a>
+          <a href="#"><img src="../assets/facebook.svg" alt="Facebook"></a>
+          <a href="#"><img src="../assets/youtube.svg" alt="Youtube"></a>
+        </div>
+      </div>
     </q-footer>
 
   </q-layout>
