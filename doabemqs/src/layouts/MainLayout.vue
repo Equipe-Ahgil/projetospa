@@ -56,14 +56,41 @@
     </q-page-container>
 
     <q-footer class="bg-footer text-white">
-      <q-toolbar class="toolbar_footer">
-        <!-- <q-toolbar-title>
-          <q-avatar>
-            <img src="https://cdn.quasar.dev/logo/svg/quasar-logo.svg">
-          </q-avatar>
-          Title
-        </q-toolbar-title> -->
-      </q-toolbar>
+      <div class="container_footer">
+        <div class="row_footer">
+          <div>
+            <ul>
+              <li><p>Transparência</p></li>
+              <li>Empresa parceira</li>
+              <li>Ajuda</li>
+              <li>Voluntários</li>
+            </ul>
+          </div>
+          <div>
+            <ul>
+              <li><p>Links uteis</p></li>
+              <li>Sua conta</li>
+              <li>Relatórios</li>
+              <li>Fale Conosco</li>
+            </ul>
+          </div>
+          <div>
+            <ul>
+              <li><p>Contato</p></li>
+              <li>Sua conta</li>
+              <li>Relatórios</li>
+              <li>Fale Conosco</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer-links">
+        <div class="footer-icons">
+          <a href="#"><img src="../assets/instagram.svg" alt="Instagram"></a>
+          <a href="#"><img src="../assets/facebook.svg" alt="Facebook"></a>
+          <a href="#"><img src="../assets/youtube.svg" alt="Youtube"></a>
+        </div>
+      </div>
     </q-footer>
 
   </q-layout>
