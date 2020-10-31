@@ -39,7 +39,8 @@
           </q-item>
         </q-list>
       </q-btn-dropdown>
-      <q-btn stretch flat label="Pesquisar Casos" />
+      <q-btn stretch flat label="Pesquisar Casos" icon="search">
+      </q-btn>
         <q-list>
         <EssentialLink
           v-for="link in essentialLinks"
