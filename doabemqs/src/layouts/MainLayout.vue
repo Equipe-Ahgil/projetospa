@@ -1,5 +1,5 @@
 <template>
-  <q-layout view="hHh lpR fFf">
+  <q-layout view="hHh lpR fff">
 
     <q-header elevated class="bg-primary text-white">
       <q-toolbar>
@@ -14,7 +14,7 @@
       <q-btn stretch flat label="Login" />
       <q-btn-dropdown stretch flat label="Cadastro">
         <q-list>
-          <!-- <q-item-label header>Folders</q-item-label> -->
+          <!-- <q-item-label header>Folders</q-item-label>
           <q-item v-for="n in 3" :key="`x.${n}`" clickable v-close-popup tabindex="0">
             <q-item-section avatar>
               <q-avatar icon="folder" color="secondary" text-color="white" />
@@ -25,6 +25,16 @@
             </q-item-section>
             <q-item-section side>
               <q-icon name="info" />
+            </q-item-section>
+          </q-item> -->
+          <q-item clickable v-close-popup>
+            <q-item-section>
+              <q-item-label>Pessoa Fisica</q-item-label>
+            </q-item-section>
+          </q-item>
+          <q-item clickable v-close-popup>
+            <q-item-section>
+              <q-item-label>Pessoa Juridica</q-item-label>
             </q-item-section>
           </q-item>
         </q-list>
@@ -44,7 +54,7 @@
       <router-view />
     </q-page-container>
 
-    <q-footer elevated class="bg-footer text-white">
+    <q-footer class="bg-footer text-white">
       <q-toolbar>
         <q-toolbar-title>
           <q-avatar>
