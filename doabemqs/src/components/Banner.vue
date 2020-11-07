@@ -68,4 +68,12 @@ export default {
   font-size: 24px;
   line-height: 29px;
 }
+
+.q-btn__wrapper {
+    padding: 4px 12px;
+    min-height: 2.572em;
+    border-radius: inherit;
+    width: 100%;
+    height: 100%;
+}
 </style>
