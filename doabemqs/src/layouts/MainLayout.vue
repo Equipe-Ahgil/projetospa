@@ -14,19 +14,6 @@
       <q-btn stretch flat label="Login" />
       <q-btn-dropdown stretch flat label="Cadastro">
         <q-list>
-          <!-- <q-item-label header>Folders</q-item-label>
-          <q-item v-for="n in 3" :key="`x.${n}`" clickable v-close-popup tabindex="0">
-            <q-item-section avatar>
-              <q-avatar icon="folder" color="secondary" text-color="white" />
-            </q-item-section>
-            <q-item-section>
-              <q-item-label>Photos</q-item-label>
-              <q-item-label caption>February 22, 2016</q-item-label>
-            </q-item-section>
-            <q-item-section side>
-              <q-icon name="info" />
-            </q-item-section>
-          </q-item> -->
           <q-item clickable v-close-popup>
             <q-item-section>
               <q-item-label>Pessoa Fisica</q-item-label>
@@ -61,41 +48,7 @@
     </q-page-container>
 
     <q-footer class="bg-footer text-white">
-      <div class="container_footer">
-        <div class="row_footer">
-          <div>
-            <ul>
-              <li><p>Transparência</p></li>
-              <li>Empresa parceira</li>
-              <li>Ajuda</li>
-              <li>Voluntários</li>
-            </ul>
-          </div>
-          <div>
-            <ul>
-              <li><p>Links uteis</p></li>
-              <li>Sua conta</li>
-              <li>Relatórios</li>
-              <li>Fale Conosco</li>
-            </ul>
-          </div>
-          <div>
-            <ul>
-              <li><p>Contato</p></li>
-              <li>Sua conta</li>
-              <li>Relatórios</li>
-              <li>Fale Conosco</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <div class="footer-links">
-        <div class="footer-icons">
-          <a href="#"><img src="../assets/instagram.svg" alt="Instagram"></a>
-          <a href="#"><img src="../assets/facebook.svg" alt="Facebook"></a>
-          <a href="#"><img src="../assets/youtube.svg" alt="Youtube"></a>
-        </div>
-      </div>
+      <Footer /> <!-- components footer -->
     </q-footer>
 
   </q-layout>
@@ -103,6 +56,7 @@
 
 <script>
 import EssentialLink from 'components/EssentialLink.vue'
+import Footer from 'components/Footer.vue'
 
 const linksData = [
   {
@@ -114,7 +68,7 @@ const linksData = [
 ]
 export default {
   name: 'MainLayout',
-  components: { EssentialLink },
+  components: { EssentialLink, Footer },
   data () {
     return {
       leftDrawerOpen: false,

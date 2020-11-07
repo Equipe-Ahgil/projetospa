@@ -1,13 +1,9 @@
 <template>
   <q-page class="flex flex-center">
 <!-- Imagem do banner -->
-  <div class="full-width row">
-    <q-img
-      src="../assets/banner.svg"
-      spinner-color="white"
-      style="height: 400px; max-width: 100%"
-    />
-  </div>
+<div>
+  <Banner />
+</div>
 <!-- Fim imagem do banner -->
 <!-- Carrossel -->
   <div class="q-pa-md">
@@ -133,8 +129,11 @@
 </template>
 
 <script>
+import Banner from 'components/Banner.vue'
+
 export default {
   name: 'PageIndex',
+  components: { Banner },
   data () {
     return {
       slide: 'style',
