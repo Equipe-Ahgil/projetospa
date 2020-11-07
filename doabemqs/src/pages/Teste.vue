@@ -1,11 +1,11 @@
 <template>
   <q-page>
-    <div>
-      <div class="header">
+    <div> <!-- Div para Central -->
+      <div class="header">  <!-- Div para Header -->
         <Banner />
       </div>
 
-      <div class="carrossel">
+      <div class="carrossel"> <!-- Div para Carrossel -->
 
         <!-- Carrossel -->
         <div class="q-pa-md">
@@ -56,7 +56,7 @@
         <!-- Fim carrossel -->
       </div>
 
-      <div class="conteudo flex flex-center">
+      <div class="conteudo flex flex-center"> <!-- Div para conteudo -->
 
         <!-- Cards como funciona -->
         <div class="q-pa-md row items-start q-gutter-md">
