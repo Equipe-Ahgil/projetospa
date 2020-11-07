@@ -58,85 +58,75 @@
 
       <div class="conteudo flex flex-center">
 
-<!-- Cards como funciona -->
-  <div class="q-pa-md row items-start q-gutter-md">
-    <q-card class="my-card">
-      <img src="../assets/network1.svg">
+        <!-- Cards como funciona -->
+        <div class="q-pa-md row items-start q-gutter-md">
 
-      <q-card-section>
-        <div class="text-h6">Conectar doações a quem necessita.</div>
-      </q-card-section>
+          <q-card class="my-card">
+            <img src="../assets/network1.svg">
+            <q-card-section>
+              <div class="text-h6">Conectar doações a quem necessita.</div>
+            </q-card-section>
+          </q-card>
 
-    </q-card>
+          <q-card class="my-card">
+            <img src="https://cdn.quasar.dev/img/mountains.jpg">
+            <q-card-section>
+              <div class="text-h6">Our Changing Planet</div>
+              <div class="text-subtitle2">by John Doe</div>
+            </q-card-section>
+            <q-card-section class="q-pt-none">
+              {{ lorem }}
+            </q-card-section>
+          </q-card>
 
-    <q-card class="my-card">
-      <img src="https://cdn.quasar.dev/img/mountains.jpg">
+          <q-card class="my-card">
+            <img src="https://cdn.quasar.dev/img/mountains.jpg">
+            <q-card-section>
+              <div class="text-h6">Our Changing Planet</div>
+              <div class="text-subtitle2">by John Doe</div>
+            </q-card-section>
+            <q-card-section class="q-pt-none">
+              {{ lorem }}
+            </q-card-section>
+          </q-card>
 
-      <q-card-section>
-        <div class="text-h6">Our Changing Planet</div>
-        <div class="text-subtitle2">by John Doe</div>
-      </q-card-section>
+        </div>
+        <!-- Fim cards como funciona-->
 
-      <q-card-section class="q-pt-none">
-        {{ lorem }}
-      </q-card-section>
-    </q-card>
+        <!-- Cards transparência -->
+        <div class="q-pa-md row items-start q-gutter-md">
+          <q-card class="my-card">
+            <img src="../assets/network1.svg">
+            <q-card-section>
+              <div class="text-h6">Conectar doações a quem necessita.</div>
+            </q-card-section>
+          </q-card>
 
-    <q-card class="my-card">
-      <img src="https://cdn.quasar.dev/img/mountains.jpg">
+          <q-card class="my-card">
+            <img src="https://cdn.quasar.dev/img/mountains.jpg">
+            <q-card-section>
+              <div class="text-h6">Our Changing Planet</div>
+              <div class="text-subtitle2">by John Doe</div>
+            </q-card-section>
+            <q-card-section class="q-pt-none">
+              {{ lorem }}
+            </q-card-section>
+          </q-card>
 
-      <q-card-section>
-        <div class="text-h6">Our Changing Planet</div>
-        <div class="text-subtitle2">by John Doe</div>
-      </q-card-section>
+          <q-card class="my-card">
+            <img src="https://cdn.quasar.dev/img/mountains.jpg">
+            <q-card-section>
+              <div class="text-h6">Our Changing Planet</div>
+              <div class="text-subtitle2">by John Doe</div>
+            </q-card-section>
+            <q-card-section class="q-pt-none">
+              {{ lorem }}
+            </q-card-section>
+          </q-card>
 
-      <q-card-section class="q-pt-none">
-        {{ lorem }}
-      </q-card-section>
-    </q-card>
-  </div>
-<!-- Fim cards como funciona-->
-<!-- Cards transparência -->
-<div class="q-pa-md row items-start q-gutter-md">
-    <q-card class="my-card">
-      <img src="../assets/network1.svg">
-
-      <q-card-section>
-        <div class="text-h6">Conectar doações a quem necessita.</div>
-      </q-card-section>
-
-    </q-card>
-
-    <q-card class="my-card">
-      <img src="https://cdn.quasar.dev/img/mountains.jpg">
-
-      <q-card-section>
-        <div class="text-h6">Our Changing Planet</div>
-        <div class="text-subtitle2">by John Doe</div>
-      </q-card-section>
-
-      <q-card-section class="q-pt-none">
-        {{ lorem }}
-      </q-card-section>
-    </q-card>
-
-    <q-card class="my-card">
-      <img src="https://cdn.quasar.dev/img/mountains.jpg">
-
-      <q-card-section>
-        <div class="text-h6">Our Changing Planet</div>
-        <div class="text-subtitle2">by John Doe</div>
-      </q-card-section>
-
-      <q-card-section class="q-pt-none">
-        {{ lorem }}
-      </q-card-section>
-    </q-card>
-  </div>
-<!-- Fim cards transparência -->
-
+        </div>
+        <!-- Fim cards transparência -->
       </div>
-
     </div>
   </q-page>
 </template>
