@@ -5,25 +5,25 @@
           <div>
             <ul>
               <li><p>Transparência</p></li>
-              <li>Empresa parceira</li>
-              <li>Ajuda</li>
-              <li>Voluntários</li>
+              <li><a href="#">Ajuda</a></li>
+              <li><a href="#">Empresa parceira</a></li>
+              <li><a href="#">Voluntários</a></li>
             </ul>
           </div>
           <div>
             <ul>
               <li><p>Links uteis</p></li>
-              <li>Sua conta</li>
-              <li>Relatórios</li>
-              <li>Fale Conosco</li>
+              <li><a href="#">Sua conta</a></li>
+              <li><a href="#">Relatórios</a></li>
+              <li><a href="#">Fale Conosco</a></li>
             </ul>
           </div>
           <div>
             <ul>
               <li><p>Contato</p></li>
-              <li>Sua conta</li>
-              <li>Relatórios</li>
-              <li>Fale Conosco</li>
+              <li><a href="#">Sua conta</a></li>
+              <li><a href="#">Relatórios</a></li>
+              <li><a href="#">Fale Conosco</a></li>
             </ul>
           </div>
         </div>
@@ -48,6 +48,11 @@ export default {
 </script>
 
 <style lang="stylus">
+
+a {
+  text-decoration: none;
+  color: white;
+}
 
 .q-footer{
     height: 180px;
