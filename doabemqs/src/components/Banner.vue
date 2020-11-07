@@ -2,7 +2,7 @@
   <div>
 
     <q-parallax
-      src="https://cdn.quasar.dev/img/parallax2.jpg"
+      src="../assets/banner.svg"
       style="height: 400px; max-width: 100%"
     >
 
