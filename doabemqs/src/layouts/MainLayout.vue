@@ -9,7 +9,7 @@
 
       <q-space />
 
-      <q-btn stretch flat label="Casos" />
+      <q-btn stretch flat label="Casos" to="casos"/>
       <q-btn stretch flat label="Mapa" />
       <q-btn stretch flat label="Login" />
       <q-btn-dropdown stretch flat label="Cadastro">
