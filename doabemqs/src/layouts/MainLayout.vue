@@ -3,10 +3,11 @@
 
     <q-header elevated class="bg-primary text-white">
       <q-toolbar>
-        <q-avatar>
-            <img src="../assets/doabem.svg">
-        </q-avatar>
-
+        <q-btn stretch flat to="#">
+          <q-avatar>
+              <img src="../assets/doabem.svg">
+          </q-avatar>
+        </q-btn>
       <q-space />
 
       <q-btn stretch flat label="Casos" to="casos"/>
@@ -16,17 +17,23 @@
         <q-list>
           <q-item clickable v-close-popup>
             <q-item-section>
-              <q-item-label>Pessoa Fisica</q-item-label>
+              <q-item-label>
+                <q-breadcrumbs-el to="#" label="Pessoal Fisica"/>
+              </q-item-label>
             </q-item-section>
           </q-item>
           <q-item clickable v-close-popup>
             <q-item-section>
-              <q-item-label>Pessoa Juridica</q-item-label>
+              <q-item-label>
+                <q-breadcrumbs-el to="#" label="Pessoal Juridica"/>
+              </q-item-label>
             </q-item-section>
           </q-item>
           <q-item clickable v-close-popup>
             <q-item-section>
-              <q-item-label>Beneficiários</q-item-label>
+              <q-item-label>
+                <q-breadcrumbs-el to="#" label="Beneficiarios"/>
+              </q-item-label>
             </q-item-section>
           </q-item>
         </q-list>
