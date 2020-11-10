@@ -1,41 +1,54 @@
 <template>
+
 <div>
-  <div class="container_footer">
-        <div class="row_footer">
-          <div>
-            <ul>
-              <li><p>Transparência</p></li>
-              <li><a href="#">Ajuda</a></li>
-              <li><a href="#">Empresa parceira</a></li>
-              <li><a href="#">Voluntários</a></li>
-            </ul>
-          </div>
-          <div>
-            <ul>
-              <li><p>Links uteis</p></li>
-              <li><a href="#">Sua conta</a></li>
-              <li><a href="#">Relatórios</a></li>
-              <li><a href="#">Fale Conosco</a></li>
-            </ul>
-          </div>
-          <div>
-            <ul>
-              <li><p>Contato</p></li>
-              <li><a href="#">Sua conta</a></li>
-              <li><a href="#">Relatórios</a></li>
-              <li><a href="#">Fale Conosco</a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <div class="footer-links">
-        <div class="footer-icons">
-          <a href="#"><img src="../assets/instagram.svg" alt="Instagram"></a>
-          <a href="#"><img src="../assets/facebook.svg" alt="Facebook"></a>
-          <a href="#"><img src="../assets/youtube.svg" alt="Youtube"></a>
-        </div>
-      </div>
+
+  <div padding class="container_footer flex flex-center">
+
+    <q-item class="row_footer col-12">
+      <q-item>
+        <q-list>
+          <li><p>Transparência</p></li>
+          <li><q-breadcrumbs-el label="Relatório de Atividades" to="#"/></li>
+          <li><q-breadcrumbs-el label="Quem somos" to="#"/></li>
+          <li><q-breadcrumbs-el label="Voluntarios" to="#"/></li>
+        </q-list>
+        </q-item>
+
+      <q-item>
+        <q-list>
+          <li><p>Links uteis</p></li>
+          <li><q-breadcrumbs-el label="Política de privacidade" to="#"/></li>
+          <li><q-breadcrumbs-el label="Dúvidas frequentes" to="#"/></li>
+          <li><q-breadcrumbs-el label="Fale conosco" to="#"/></li>
+        </q-list>
+        </q-item>
+
+        <q-item>
+        <q-list>
+          <li><p>Contato</p></li>
+          <li><q-breadcrumbs-el label="Empresa" to="#"/></li>
+          <li><q-breadcrumbs-el label="Parceiros" to="#"/></li>
+          <li><q-breadcrumbs-el label="Atendimento" to="#"/></li>
+        </q-list>
+        </q-item>
+    </q-item>
+
+  </div>
+
+  <div>
+
+    <q-item class="footer-links">
+      <q-list class="footer-icons">
+        <a href="#"><img src="../assets/instagram.svg" alt="Instagram"></a>
+        <a href="#"><img src="../assets/facebook.svg" alt="Facebook"></a>
+        <a href="#"><img src="../assets/youtube.svg" alt="Youtube"></a>
+      </q-list>
+    </q-item>
+
+  </div>
+
 </div>
+
 </template>
 
 <script>
@@ -49,13 +62,9 @@ export default {
 
 <style lang="stylus">
 
-a {
-  text-decoration: none;
-  color: white;
-}
-
-.q-footer{
+.container_footer{
     height: 180px;
+    width: 100%;
     background-color: $laranja;
 }
 
@@ -64,30 +73,22 @@ a {
     text-decoration: none;
 }
 
-.container_footer{
-    margin: 0 15% 0 15%; //FUNCIONA NÃO MEXE
-}
-
-.row_footer{
-    display:flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 10px;
+.row_footer .q-item{
+  padding: 8px 40px;
 }
 
 .footer-links{
     display: flex;
-    align-items: center;
     justify-content: center;
-
+    align-items: center;
     background-color: $larajuro;
-    height: auto;
+    height: 47px;
 }
 
 .footer-icons img {
-    height: 46px;
-    width : 46px;
-    padding-right: 12px;
+  height: 46px;
+  width : 46px;
+  padding-right: 12px;
 }
 
 </style>

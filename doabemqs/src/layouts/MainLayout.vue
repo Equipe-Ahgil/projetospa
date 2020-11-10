@@ -47,7 +47,7 @@
       <router-view />
     </q-page-container>
 
-    <q-footer class="bg-footer text-white">
+    <q-footer class=" absolute-bottom text-white">
       <Footer /> <!-- components footer -->
     </q-footer>
 
