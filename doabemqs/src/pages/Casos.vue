@@ -1,7 +1,17 @@
 <template>
-  <q-page padding>
-    <div class="row">
-      <CardUser class="col-12 col-md-6" v-for="user in users" :key="user.id" :user="user" />
+  <q-page padding class="flex flex-center">
+    <div>
+      <div class="q-page-container">
+        <div class="text-center"> <!-- Div para o titulo da pagina-->
+          <p class="title-casos">Casos</p>
+          <p class="descricao-casos">Encontre Alguém e Faça o BEM!</p>
+        </div>
+        <div class="row flex-center"> <!-- Div para os cards da pagina-->
+          <div class="container-card">
+            <CardUser class="card" v-for="user in users" :key="user.id" :user="user" />
+          </div>
+        </div>
+      </div>
     </div>
   </q-page>
 </template>
@@ -47,3 +57,42 @@ export default {
   }
 }
 </script>
+
+<style lang="stylus">
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap');
+
+  /* Importante configuração grid */
+
+  @media screen and (min-width: 900px) {
+    .container-card {
+      display: grid;
+      grid-template-columns: 250px 250px 250px;
+    }
+  }
+
+</style>
+
+<style lang="sass" scoped>
+
+.title-casos
+  color: #5CC6D0
+  font-family: Montserrat
+  font-weight: bold
+  font-size: 36px
+  line-height: auto
+
+.card
+  padding: 10px
+
+.descricao-casos
+  font-family: Roboto
+  font-style: normal
+  font-weight: bold
+  font-size: 18px
+  line-height: 25px
+
+  text-align: center
+  letter-spacing: 0.18em
+  color: #14213D
+
+</style>
