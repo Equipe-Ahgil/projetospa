@@ -1,6 +1,7 @@
 <template>
-  <q-layout view="hHh lpR fff">
+  <q-layout view="hHh Lpr fFf" class="flex flex-center"> <!-- Be sure to play with the Layout demo on docs -->
 
+    <!-- (Optional) The Footer -->
     <q-header elevated class="bg-primary text-white">
       <q-toolbar>
         <q-btn stretch flat to="#">
@@ -10,9 +11,7 @@
         </q-btn>
       <q-space />
 
-      <q-btn stretch flat label="Casos" to="casos"/>
-      <q-btn stretch flat label="Mapa" />
-      <q-btn stretch flat label="Login" to="Login" />
+      <q-btn stretch flat label="Pagina Inicial" to="/"/>
       <q-btn-dropdown stretch flat label="Cadastro">
         <q-list>
           <q-item clickable v-close-popup>
@@ -38,49 +37,41 @@
           </q-item>
         </q-list>
       </q-btn-dropdown>
-      <q-btn stretch flat label="Pesquisar Casos" icon="search">
-      </q-btn>
-        <q-list>
-        <EssentialLink
-          v-for="link in essentialLinks"
-          :key="link.title"
-          v-bind="link"
-        />
-      </q-list>
       </q-toolbar>
     </q-header>
+    <!-- (Optional) A Drawer; you can add one more with side="right" or change this one's side -->
 
     <q-page-container>
+      <!-- This is where pages get injected -->
       <router-view />
     </q-page-container>
 
-    <q-footer>
-      <Footer /> <!-- components footer -->
+    <q-footer class="absolute-bottom text-subtitle1 text-center">
+      Create by Áhgil - Soluções Tecnológicas.
     </q-footer>
 
   </q-layout>
 </template>
 
 <script>
-import EssentialLink from 'components/EssentialLink.vue'
-import Footer from 'components/Footer.vue'
-
-const linksData = [
-  {
-    // title: 'Casos',
-    // caption: 'Listas de casos',
-    // icon: 'assignment_ind',
-    // link: '/casos'
-  }
-]
 export default {
-  name: 'MainLayout',
-  components: { EssentialLink, Footer },
+  name: 'LayoutControle',
   data () {
-    return {
-      leftDrawerOpen: false,
-      essentialLinks: linksData
-    }
+    return {}
   }
 }
 </script>
+
+<style lang="stylus">
+  .q-layout{
+    background: $cinza;
+    width: 100vw;
+    height 100vh;
+  }
+  .text-subtitle1{
+    position: absolute;
+    padding: 10px;
+    color: #fff;
+    background-color: $primary;
+  }
+</style>
