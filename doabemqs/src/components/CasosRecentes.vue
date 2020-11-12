@@ -57,10 +57,10 @@ export default {
 }
 </script>
 
-<style lang="sass">
+<style lang="sass" scoped>
 
 .my-card
   width: 100%
   max-width: 250px
-
+scoped
 </style>

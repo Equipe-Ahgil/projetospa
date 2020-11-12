@@ -3,16 +3,17 @@
 
     <q-header elevated class="bg-primary text-white">
       <q-toolbar>
-        <q-btn stretch flat to="#">
+        <q-btn stretch flat to="/">
           <q-avatar>
               <img src="../assets/doabem.svg">
           </q-avatar>
         </q-btn>
       <q-space />
 
-      <q-btn stretch flat label="Casos" to="casos"/>
-      <q-btn stretch flat label="Mapa" />
-      <q-btn stretch flat label="Login" to="Login" />
+        <q-btn stretch flat label="Casos" to="casos"/>
+        <q-btn stretch flat label="Mapa" />
+        <q-btn stretch flat label="Login" to="login" />
+
       <q-btn-dropdown stretch flat label="Cadastro">
         <q-list>
           <q-item clickable v-close-popup>

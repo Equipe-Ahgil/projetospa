@@ -54,7 +54,7 @@ export default {
 }
 </script>
 
-<style lang="sass">
+<style lang="sass" scoped>
 .bg-card
  background: #5CC6D0
 </style>
