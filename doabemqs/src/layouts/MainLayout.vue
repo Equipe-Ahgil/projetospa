@@ -54,7 +54,7 @@
       <router-view />
     </q-page-container>
 
-    <q-footer class=" absolute-bottom text-white">
+    <q-footer>
       <Footer /> <!-- components footer -->
     </q-footer>
 
