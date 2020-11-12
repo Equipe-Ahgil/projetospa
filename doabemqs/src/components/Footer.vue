@@ -9,7 +9,7 @@
         <q-list>
           <li><p>Transparência</p></li>
           <li><q-breadcrumbs-el label="Relatório de Atividades" to="#"/></li>
-          <li><q-breadcrumbs-el label="Quem somos" to="#"/></li>
+          <li><q-breadcrumbs-el label="Quem somos" to="sobre"/></li>
           <li><q-breadcrumbs-el label="Voluntarios" to="#"/></li>
         </q-list>
         </q-item>
@@ -60,7 +60,7 @@ export default {
 }
 </script>
 
-<style lang="stylus">
+<style lang="stylus" scoped>
 
 .container_footer{
     height: 180px;

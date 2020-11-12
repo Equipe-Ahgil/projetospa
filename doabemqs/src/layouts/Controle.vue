@@ -4,7 +4,7 @@
     <!-- (Optional) The Footer -->
     <q-header elevated class="bg-primary text-white">
       <q-toolbar>
-        <q-btn stretch flat to="#">
+        <q-btn stretch flat to="/">
           <q-avatar>
               <img src="../assets/doabem.svg">
           </q-avatar>
@@ -62,7 +62,7 @@ export default {
 }
 </script>
 
-<style lang="stylus">
+<style lang="stylus" scoped>
   .q-layout{
     background: $cinza;
     width: 100vw;
