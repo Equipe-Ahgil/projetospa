@@ -75,8 +75,8 @@ export default {
   color: white
   background-color: rgba(0, 0, 0, .3)
 
-.my-card
+.my-card /*TAMANHO DOS CARDS*/
   width: 100%
-  height: 25rem;
+  height: 25rem
   max-width: 250px
 </style>
