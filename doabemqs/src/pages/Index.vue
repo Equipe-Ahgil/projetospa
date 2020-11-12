@@ -15,7 +15,7 @@
       </div>
 
         <!-- Cards transparência -->
-        <div class="q-pa-md row items-start q-gutter-md">
+        <div padding class="q-pa-md row flex-center q-gutter-md">
           <q-card class="my-card">
             <img src="../assets/network1.svg">
             <q-card-section>
@@ -77,5 +77,6 @@ export default {
 
 .my-card
   width: 100%
+  height: 25rem;
   max-width: 250px
 </style>

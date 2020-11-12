@@ -50,10 +50,8 @@ export default {
   width: 241px
   height: 72px
 
-.absolute-bottom
-  right: 0
-  bottom: 7px
-  left: 0
+.button-banner
+  padding: 7px
 
 </style>
 
@@ -67,6 +65,12 @@ export default {
   font-weight: bold;
   font-size: 24px;
   line-height: 29px;
+}
+
+.absolute-bottom {
+    right: 0;
+    bottom: 0px;
+    left: 0;
 }
 
 .q-btn__wrapper {

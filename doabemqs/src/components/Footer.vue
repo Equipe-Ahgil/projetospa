@@ -2,7 +2,7 @@
 
 <div>
 
-  <div padding class="container_footer flex flex-center">
+  <div class="container_footer flex flex-center">
 
     <q-item class="row_footer col-12">
       <q-item>
@@ -82,7 +82,8 @@ export default {
     justify-content: center;
     align-items: center;
     background-color: $larajuro;
-    height: 47px;
+    height: 50px;
+    padding-bottom: 10px;
 }
 
 .footer-icons img {
