@@ -19,7 +19,7 @@
           <q-item clickable v-close-popup>
             <q-item-section>
               <q-item-label>
-                <q-breadcrumbs-el to="#" label="Pessoal Fisica"/>
+                <q-breadcrumbs-el to="cadpessoa" label="Pessoal Fisica"/>
               </q-item-label>
             </q-item-section>
           </q-item>
@@ -85,3 +85,9 @@ export default {
   }
 }
 </script>
+
+<style lang="stylus" scoped>
+.q-layout{
+  background: $cinza;
+}
+</style>
