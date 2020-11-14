@@ -1,205 +1,357 @@
 <template>
-<div class="container__form">
-
-  <div class="title_form">
-    <p>Cadastro Pessoa Fisica</p>
-  </div>
-
-  <div class="forms">
-    <div class="form__descrincao">
-      <p>Indentificação</p>
-    </div>
-    <q-form class="q-forms" method="post" @submit="onSubmit">
-      <q-input
-      label="Seu nome completo *"
-      hint="Nome Completo"
-      />
-
-      <q-input
-      label="Telefone *"
-      mask="(##) ##### - ####"
-      hint="Numero de Telefone"
-      />
-
-      <q-input
-      label="E-mail *"
-      hint="E-mail Valido"
-      />
-
-      <div class="fomr-sex q-gutter-sm">
-        <p>Sexo</p>
-        <q-radio v-model="shape" val="line" label="Masculino" />
-        <q-radio v-model="shape" val="rectangle" label="Feminino" />
+  <div class="flex flex-center">
+    <div class="fomr-bg q-pa-md" style="width: 75vw">
+      <div>
+        <p class="t-descricao text-h5">Identificação</p>
       </div>
+      <form @submit.prevent.stop="onSubmit" @reset.prevent.stop="onReset" class="q-gutter-md">
+        <q-input
+          ref="Nome"
+          v-model="Nome"
+          label="Nome Sobrenome"
+          hint="Nome e sobrenome *"
+          lazy-rules
+          :rules="[ val => val && val.length > 0 || 'Campo Obrigatório']"
+        />
 
-      <q-input
-      label="CPF *"
-      hint="Numero de CPF"
-      mask="###.###.###-##"
-      />
+        <q-input
+          ref="Email"
+          v-model="Email"
+          label="E-mail"
+          hint="E-mail Ex:user@gmail.com *"
+          type="email"
+          :rules="[val => !!val || 'E-mail Invalido Ex:user@gmail.com', isValidEmail]"
+        />
 
-      <q-input
-      label="RG *"
-      hint="Carteira de Indentidade"
-      mask="#.###.###"
-      />
+        <q-input
+          ref="Telefone"
+          mask="(##) ##### - ####"
+          v-model="Telefone"
+          hint="Número (00) 99999 - 9999 *"
+          label="Número de Telefone"
+          lazy-rules
+          :rules="[
+            val => val !== null && val.length > 16 || 'Campo Obrigatório'
+          ]"
+        />
 
-      <q-select v-model="Orgao_" :options="O_options"  hint="Orgão Expedidor *" label="Orgão Expedidor"/>
+        <div class="selsexo">
+          <p>Sexo</p>
 
-      <q-input v-model="data"
-      type="date"
-      hint="Data de Nascimento">
-      </q-input>
+          <q-radio
+            v-model="Sexo"
+            val="line"
+            label="Masculino"
+          />
 
-      <div class="form__Estado">
+          <q-radio
+            v-model="Sexo"
+            val="rectangle"
+            label="Feminino"
+          />
 
-        <div class="form__descrincao">
-          <p>Endereço</p>
         </div>
 
-        <q-select v-model="Cidade_" :options="C_options"  hint="Cidade *" label="Cidade"/>
-
         <q-input
-        label="Estado *"
-        hint="Estado"
+          ref="CPF"
+          mask="###.###.###-##"
+          v-model="CPF"
+          hint="Número de CPF *"
+          label="Número de CPF"
+          lazy-rules
+          :rules="[
+            val => val !== null && val.length > 13 || 'Campo Obrigatório'
+          ]"
         />
 
         <q-input
-        label="CEP *"
-        hint="CEP"
+          ref="RG"
+          mask="#.###.###"
+          v-model="RG"
+          hint="Número de RG *"
+          label="Número de RG"
+          lazy-rules
+          :rules="[
+            val => val !== null && val.length > 8 || 'Campo Obrigatório'
+          ]"
         />
 
         <q-input
-        label="Lagadouro *"
-        hint="Lagadouro"
+          ref="Data_Nascimento"
+          v-model="Data_Nascimento"
+          type="date"
+          hint="Data de Nascimento"
+          lazy-rules
+          :rules="[ val => val && val.length > 0 || 'Campo Obrigatório']"
+
+        />
+
+        <q-select
+          ref="Org_Expedidor"
+          v-model="Org_Expedidor"
+          :options="O_options"
+          hint="Orgão Expedidor"
+          label="Orgão Expedidor"
+          lazy-rules
+          :rules="[ val => val && val.length > 0 || 'Campo Obrigatório']"
+        />
+
+        <p class="t-descricao text-h5">Endereço</p>
+
+        <q-select
+          ref="Cidade"
+          v-model="Cidade"
+          :options="C_options"
+          hint="Cidade *"
+          label="Selecionar Cidade"
+          lazy-rules
+          :rules="[ val => val && val.length > 0 || 'Campo Obrigatório']"
+        />
+
+        <q-select
+          ref="Estado"
+          v-model="Estado"
+          :options="C_estado"
+          hint="Estado *"
+          label="Selecionar Estado"
+          lazy-rules
+          :rules="[ val => val && val.length > 0 || 'Campo Obrigatório']"
         />
 
         <q-input
-        label="Complemento *"
-        hint="Complemento"
+          ref="CEP"
+          type="number"
+          v-model="CEP"
+          label="CEP"
+          hint="CEP"
+          lazy-rules
+          :rules="[ val => val && val.length > 0 || 'Campo Obrigatório']"
         />
 
         <q-input
-        label="Numero *"
-        hint="Numero"
+          ref="Logradouro"
+          v-model="Logradouro"
+          label="Lagadouro"
+          hint="Lagadouro *"
+          lazy-rules
+          :rules="[ val => val && val.length > 0 || 'Campo Obrigatório']"
         />
 
         <q-input
-        label="Bairro *"
-        hint="Bairro"
+          ref="Complemento"
+          v-model="Complemento"
+          label="Complemento"
+          hint="Complemento *"
+          lazy-rules
+          :rules="[ val => val && val.length > 0 || 'Campo Obrigatório']"
         />
 
-        <q-select v-model="Pais_" :options="options"  hint="Pais"/>
+        <q-input
+          ref="Numero"
+          v-model="Numero"
+          label="Numero"
+          hint="Numero *"
+          type="number"
+          lazy-rules
+          :rules="[ val => val && val.length > 0 || 'Campo Obrigatório']"
+        />
 
-      </div>
-      <div class="boton_cadastrar" padding vertical align="right">
-        <q-btn color="secondary" label="Cadastrar" @submit="onSubmit"/>
-      </div>
-    </q-form>
-  </div>
+        <q-select
+          ref="Bairro"
+          v-model="Bairro"
+          :options="C_Bairro"
+          label="Selecionar Bairro"
+          hint="Bairro *"
+          lazy-rules
+          :rules="[ val => val && val.length > 0 || 'Campo Obrigatório']"
+        />
+
+        <q-select
+          ref="Pais"
+          v-model="Pais"
+          :options="options"
+          label="Selecionar Pais"
+          hint="Pais *"
+          lazy-rules
+          :rules="[ val => val && val.length > 0 || 'Campo Obrigatório']"
+          />
+
+        <q-list class="termos_uso">
+          <q-item class="flex flex-center">
+            <q-breadcrumbs-el class="cursor-pointer"  @click="alert = true" label="Leia os termos de uso" />
+          </q-item>
+          <q-item>
+            <q-toggle v-model="accept" label="Eu li e concordo com os termos de uso" />
+          </q-item>
+        </q-list>
+
+        <q-dialog v-model="alert">
+          <q-card>
+            <q-card-section>
+              <div class="text-h6">Termos de Usos</div>
+            </q-card-section>
+
+            <q-card-section class="q-pt-none">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum repellendus sit voluptate voluptas eveniet porro. Rerum blanditiis perferendis totam, ea at omnis vel numquam exercitationem aut, natus minima, porro labore.
+            </q-card-section>
+
+            <q-card-actions align="right">
+              <q-btn flat label="OK" color="primary" v-close-popup />
+            </q-card-actions>
+          </q-card>
+        </q-dialog>
+
+        <div class="text-center">
+          <q-btn label="Cadastrar" type="submit" color="primary" />
+          <q-btn label="Reset" type="reset" color="primary" flat class="q-ml-sm" />
+        </div>
+      </form>
+    </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'Cadastro',
+  name: 'formcardp',
   data () {
     return {
-      shape: 'line',
-      data: '',
-      Pais_: null,
+      Nome: null,
+      Telefone: null,
+      Email: null,
+      Sexo: null,
+      CPF: null,
+      RG: null,
+      Org_Expedidor: null,
+      Data_Nascimento: null,
+      Cidade: null,
+      Estado: null,
+      CEP: null,
+      Logradouro: null,
+      Complemento: null,
+      Bairro: null,
+      Numero: null,
+      Pais: null,
+      alert: false,
+
+      accept: false,
+      O_options: [
+        'SDS', 'SSC'
+      ],
       options: [
         'Brasil'
       ],
-      Cidade_: null,
       C_options: [
         'Recife', 'Olinda'
       ],
-      Orgao_: null,
-      O_options: [
-        'SDS', 'SSC'
+      C_estado: [
+        'PE', 'SP'
+      ],
+      C_Bairro: [
+        'Dois Unidos', 'Ibura'
       ]
     }
   },
 
   methods: {
-    onSubmit (evt) {
-      console.log('@submit - do something here', evt)
+    onSubmit () {
+      this.$refs.Nome.validate()
+      this.$refs.Telefone.validate()
+      this.$refs.Email.validate()
+      this.$refs.CPF.validate()
+      this.$refs.RG.validate()
+      this.$refs.Org_Expedidor.validate()
+      this.$refs.Estado.validate()
+      this.$refs.Cidade.validate()
+      this.$refs.CEP.validate()
+      this.$refs.Data_Nascimento.validate()
+      this.$refs.Logradouro.validate()
+      this.$refs.Complemento.validate()
+      this.$refs.Bairro.validate()
+      this.$refs.Numero.validate()
+      this.$refs.Pais.validate()
 
-      evt.target.submit()
+      if (this.$refs.Data_Nascimento.hasError || this.$refs.Nome.hasError || this.$refs.Telefone.hasError || this.$refs.Email.hasError || this.$refs.CPF.hasError || this.$refs.RG.hasError || this.$refs.Org_Expedidor.hasError || this.$refs.Estado.hasError || this.$refs.Cidade.hasError || this.$refs.CEP.hasError || this.$refs.Complemento.hasError || this.$refs.Logradouro.hasError || this.$refs.Bairro.hasError || this.$refs.Numero.hasError || this.$refs.Pais.hasError) {
+        this.formHasError = true
+        this.$q.notify({
+          color: 'warning',
+          message: 'Você precisa prencher todos os campos'
+        })
+      } else if (this.accept !== true) {
+        this.$q.notify({
+          color: 'negative',
+          message: 'Você precisa concordar com os termos primeiro'
+        })
+      } else {
+        this.$q.notify({
+          icon: 'done',
+          color: 'positive',
+          message: 'Submitted'
+        })
+      }
+    },
+
+    isValidEmail () {
+      const EmailPattern = /^(?=[a-zA-Z0-9@._%+-]{6,254}$)[a-zA-Z0-9._%+-]{1,64}@(?:[a-zA-Z0-9-]{1,63}\.){1,8}[a-zA-Z]{2,63}$/
+      return EmailPattern.test(this.Email) || 'E-mail Invalido'
+    },
+
+    onReset () {
+      this.Nome = null
+      this.Telefone = null
+      this.Email = null
+      this.CPF = null
+      this.RG = null
+      this.Org_Expedidor = null
+      this.Estado = null
+      this.Cidade = null
+      this.CEP = null
+      this.Logradouro = null
+      this.Complemento = null
+      this.Data_Nascimento = null
+      this.Bairro = null
+      this.Numero = null
+      this.Pais = null
+
+      this.$refs.Nome.resetValidation()
+      this.$refs.Telefone.resetValidation()
+      this.$refs.Email.resetValidation()
+      this.$refs.CPF.resetValidation()
+      this.$refs.RG.resetValidation()
+      this.$refs.Org_Expedidor.resetValidation()
+      this.$refs.Cidade.resetValidation()
+      this.$refs.Estado.resetValidation()
+      this.$refs.CEP.resetValidation()
+      this.$refs.Logradouro.resetValidation()
+      this.$refs.Complemento.resetValidation()
+      this.$refs.Bairro.resetValidation()
+      this.$refs.Numero.resetValidation()
+      this.$refs.Pais.resetValidation()
+      this.$refs.Data_Nascimento.resetValidation()
     }
   }
 }
+
 </script>
 
-<style scoped>
+<style lang="stylus" scoped>
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Montserrat&display=swap');
 
-.container__form {
-    margin: auto;
-    width: 70vw;
+.termos_uso .q-breadcrumbs__el {
+    color: #1c62aa;
 }
 
-.boton_cadastrar{
-  padding:20px;
+.fomr-bg{
+  background: white;
+  padding: 50px;
+  border-radius: 5px;
+  box-shadow: 0 1px 6px 0 rgba(32, 33, 36, .28);
 }
 
-.forms{
-    padding-right: 50px;
-    padding-left: 50px;
-    padding-top:50px;
-    padding-bottom: 20px;
-    background: white;
-    border-radius: 5px;
-}
-
-.title_form p{
-  padding: 30px;
-  font-family: Lato;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 40px;
-
-  /* Cor textos */
-
-  color: #14213D;
-}
-
-.form__descrincao{
+.t-descricao {
   font-family: Montserrat;
   font-style: normal;
   font-weight: bold;
-  font-size: 20px;
-  line-height: 25px;
-  /* identical to box height, or 104% */
-
-  letter-spacing: 0.01em;
-
-  /* Cor textos */
-
   color: #14213D;
-}
-
-.q-input{
-padding-top: 20px;
-padding-bottom: 20px;
-font-family: Montserrat;
-font-style: normal;
-font-weight: normal;
-font-size: 20px;
-line-height: 25px;
-/* or 125% */
-
-letter-spacing: 0.01em;
-color: #000000;
-}
-
-.form__Estado{
-    padding-top: 60px;
-}
-
-.fomr-sex{
-  padding:20px;
 }
 
 </style>
